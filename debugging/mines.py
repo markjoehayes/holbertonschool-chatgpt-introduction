@@ -79,6 +79,13 @@ class Minesweeper:
             except ValueError:
                 print("Invalid input. Please enter numbers only.")
 
+def check_win(self):
+    for y in range(self.height):
+        for x in range(self.width):
+            if not self.revealed[y][x] and (y * self.width + x) not in self.mines:
+                return False
+    return True        
+
 if __name__ == "__main__":
     game = Minesweeper()
     game.play()
